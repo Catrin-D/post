@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(229, 227, 227);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    font-size: 16px;
+    border-bottom: 4px solid darkgrey;
+    z-index: 10;
+}
+
+.header_left {
+    display: flex; 
+    align-items: center;
+}
+
+.header_img {
+    width: 40px; 
+    margin: 15px;
+}
+
+.header_logo_text {
+    text-transform: uppercase;
+}
+
+.header_right {
+    display: flex; 
+    align-items: center;
+}
+
+.menu_list {
+    background-color: inherit;
+    width: 200px;
+    height: 100vh;
+    font-size: 16px;
+    position: fixed;
+    top: 74px;
+}
+
+.menu_item {
+    list-style-position: inside; 
+    list-style-type: none;
+}
+
+.menu_item_link {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+}
+
+.menu_item_text {
+    padding: 0 15px;
+}
+  
+.menu_item_img {
+    width: 35px;
+    margin: 15px;
+}
+
+li.menu_item:hover {
+    background-color: rgb(243, 193, 189);
+}
+
+.post {
+    width: calc(100% - 200px);
+    background-color: inherit;
+    margin-left: 200px;
+}
+
+.letter {
+    display: flex;
+    padding: 10px 0;
+}
+
+.letter:hover {
+    background-color: rgb(213, 212, 212);
+}
+
+.letter_open {
+    width: 200px;
+    display: flex; 
+    gap: 15px;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.star {
+    width: 20px;
+} 
+
+.name_not_open {
+    font-weight: bold;
+} 
+
+.letter_body {
+    width: calc(100% - 200px - 130px);
+    display: flex; 
+    white-space: nowrap;
+}
+
+.message {
+    color:rgb(154, 153, 153);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.message::before {
+    content: "-";
+    color: rgb(154, 153, 153);
+    padding: 0 3px;
+}
+
+.letter_data {
+    width: 130px;
+    display: flex; 
+    padding-right: 20px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.attach {
+    margin-left: 15px;
+    width: 15px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.data {
+    width: calc(100% - 45px);
+    margin-left: 15px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .letter {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .letter_body {
+        flex-direction: column;
+        padding-left: 45px;
+        width: calc(100% - 60px);
+    }
+
+    .message::before {
+        content: "";
+        padding: 0;
+    }
+
+    .letter_data {
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .menu_list {
+        width: 50px;
+    }
+
+    .menu_item_text {
+        display: none;
+    }
+
+    .post {
+        width: calc(100% - 70px);
+        margin-left: 70px;
+    }
+
+    .letter_open {
+        gap: 5px;
+        width: auto;
+    }
+
+    .letter_body {
+        padding-left: 35px;
+    }
+
+}
